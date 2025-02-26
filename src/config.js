@@ -1,15 +1,13 @@
 
 const config = {
     hero: {
-        name: process.env.NEXT_PUBLIC_NAME,
-        bio: process.env.NEXT_PUBLIC_TAGLINE,
+        name: "Salam Plinth",
+        bio: "Developer | Tech Enthusiast | Open Source Contributor",
         socials: [
-          { name: "GitHub", link: process.env.NEXT_PUBLIC_GITHUB },
-          { name: "LinkedIn", link: process.env.NEXT_PUBLIC_LINKEDIN },
+          { name: "GitHub", link: "https://github.com/drKriP"},
+          { name: "LinkedIn", link: "https://www.linkedin.com/in/salamplinth" },
         ],
       },
-    name: process.env.NEXT_PUBLIC_NAME,
-    tagline: process.env.NEXT_PUBLIC_TAGLINE,
     about: {
         description:
           "I am a passionate developer with experience in full-stack development, microservices, and scalable applications.",
@@ -28,9 +26,7 @@ const config = {
       },
     ],
     contact: {
-      email: process.env.NEXT_PUBLIC_EMAIL,
-      github: process.env.NEXT_PUBLIC_GITHUB,
-      linkedin: process.env.NEXT_PUBLIC_LINKEDIN,
+      email: "plinthluwang@gmail.com",
     },
   };
   

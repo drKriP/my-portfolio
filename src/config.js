@@ -4,8 +4,8 @@ const config = {
         name: process.env.NEXT_PUBLIC_NAME,
         bio: process.env.NEXT_PUBLIC_TAGLINE,
         socials: [
-          { name: "GitHub", link: "https://github.com/yourusername" },
-          { name: "LinkedIn", link: "https://linkedin.com/in/yourprofile" },
+          { name: "GitHub", link: process.env.NEXT_PUBLIC_GITHUB },
+          { name: "LinkedIn", link: process.env.NEXT_PUBLIC_LINKEDIN },
         ],
       },
     name: process.env.NEXT_PUBLIC_NAME,

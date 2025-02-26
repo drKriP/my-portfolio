@@ -18,6 +18,8 @@ jobs:
        id-token: write
        contents: read
     steps:
+      - name: Remove extra Git config
+        run: git config --global --unset-all http.https://github.com/.extraheader || true
       - uses: actions/checkout@v3
         with:
           submodules: true

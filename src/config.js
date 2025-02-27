@@ -13,20 +13,25 @@ const config = {
           "I am a passionate developer with experience in full-stack development, microservices, and scalable applications.",
         skills: ["JavaScript", "Node.js", "React", "Next.js", "MongoDB", "Docker", "Kubernetes"],
       },
-    projects: [
-      {
-        title: "Project 1",
-        description: "A full-stack application for book lovers.",
-        link: "https://github.com/yourusername/project1",
-      },
-      {
-        title: "Project 2",
-        description: "A scalable quiz system using microservices.",
-        link: "https://github.com/yourusername/project2",
-      },
-    ],
+      projects: [
+        {
+          name: "Quiz System",
+          description: "A scalable microservices-based quiz application.",
+          github: "https://github.com/BITS-WILP-Scalable-Service-Group-25",
+        },
+        {
+          name: "Resume Website",
+          description: "A personal portfolio with dynamic content.",
+          github: "https://github.com/your-username/resume-website",
+        },
+      ],
     contact: {
       email: "plinthluwang@gmail.com",
+    },
+    contactInfo: {
+      email: "plinthluwang@gmail.com",
+      phone: "+1234567890",
+      address: "123 Main Street, City, Country",
     },
   };
   

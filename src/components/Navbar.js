@@ -1,62 +1,76 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
-import { Sun, Moon, Download } from "lucide-react";
+import { Sun, Moon, Download, Terminal } from "lucide-react";
 import { usePathname } from "next/navigation";
 
 const Navbar = ({ toggleTheme, isDarkMode }) => {
-
   const pathname = usePathname();
   const pageTitles = {
-    "/": "Home",
-    "/projects": "Projects",
-    "/contact": "Contact",
+    "/": "OVERVIEW",
+    "/projects": "PROJECT_FILES",
+    "/contact": "CONTACT_COMMS",
   };
 
-  const currentTitle = pageTitles[pathname] || "My Portfolio";
+  const currentTitle = pageTitles[pathname] || "SYSTEM_ROOT";
 
   return (
-    <nav className="bg-background text-foreground p-4 shadow-md">
-      <div className="container mx-auto flex justify-between items-center">
-        <h1 className="text-xl font-bold hidden lg:block">{currentTitle}</h1>
-        <ul className="flex space-x-4 items-center ml-auto"> {/* ✅ Keep items aligned */}
+    <nav className="border-b-2 border-cyan-dim bg-background/80 backdrop-blur-sm sticky top-0 z-50">
+      <div className="container mx-auto px-4 py-3 flex justify-between items-center text-sm mono">
+        <div className="flex items-center gap-3">
+          <Terminal size={20} className="text-cyan animate-pulse" />
+          <h1 className="text-xl font-bold tracking-tighter text-cyan hidden md:block">
+            {currentTitle}
+          </h1>
+        </div>
+
+        <ul className="flex items-center gap-6">
           <li>
-            <Link href="/" className="hover:underline">
-              Home
+            <Link href="/" className={`glitch-hover ${pathname === "/" ? "text-cyan border-b border-cyan" : ""}`}>
+              [ HOME ]
             </Link>
           </li>
           <li>
-            <Link href="/projects" className="hover:underline">
-              Projects
+            <Link href="/projects" className={`glitch-hover ${pathname === "/projects" ? "text-cyan border-b border-cyan" : ""}`}>
+              [ PROJECTS ]
             </Link>
           </li>
           <li>
-            <Link href="/contact" className="hover:underline">
-              Contact
+            <Link href="/contact" className={`glitch-hover ${pathname === "/contact" ? "text-cyan border-b border-cyan" : ""}`}>
+              [ CONTACT ]
             </Link>
           </li>
-          <li>
+          <li className="ml-2">
             <a
-              href="/SalamPlinth-Resume.pdf" // Ensure the resume is stored in the 'public' folder
+              href="/SalamPlinth-Resume.pdf"
               download
-              className="p-2 bg-blue-500 text-white rounded-full hover:bg-blue-600 flex items-center justify-center"
+              className="px-3 py-1.5 bg-cyan text-background hover:bg-white transition-colors flex items-center gap-2 font-bold"
             >
-              <Download size={20} className="lg:hidden" /> {/* Show icon only on mobile */}
-              <span className="hidden lg:inline">Download Resume</span> {/* Show text only on large screens */}
+              <Download size={16} />
+              <span className="hidden lg:inline">RESUME.EXE</span>
             </a>
           </li>
-          {/* ✅ Move Theme Toggle Button Inside the List */}
           <li>
             <button
-              className="p-2 bg-gray-700 rounded-full flex items-center justify-center text-white"
+              className="p-1.5 border border-cyan-dim hover:border-cyan text-cyan transition-colors"
               onClick={toggleTheme}
+              aria-label="Toggle Theme"
             >
-              {isDarkMode ? <Sun size={24} /> : <Moon size={24} />}
+              {isDarkMode ? <Sun size={18} /> : <Moon size={18} />}
             </button>
           </li>
         </ul>
       </div>
+      <div className="h-0.5 bg-cyan-dim/20 w-full overflow-hidden">
+         <div className="h-full bg-cyan w-1/3 animate-[slide_3s_infinite_linear]" 
+              style={{ animationName: 'navbar-scan' }}></div>
+      </div>
+      <style jsx>{`
+        @keyframes navbar-scan {
+          0% { transform: translateX(-100%); }
+          100% { transform: translateX(300%); }
+        }
+      `}</style>
     </nav>
   );
 };

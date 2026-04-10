@@ -39,9 +39,9 @@ const config = {
       github: "https://github.com/drKriP/validator.js",
     },
     {
-      name: "Go Service",
-      description: "A personal project to learn GO.",
-      github: "https://github.com/drKriP/go-service",
+      name: "F1 2021 Telemetry Analysis",
+      description: "A personal project to learn data analysis for High Speed F1 Telemetry Data.",
+      github: "https://github.com/drKriP/f1-2021-telemetry-analysis",
     },
     {
       name: "Quiz Management Microservice",
